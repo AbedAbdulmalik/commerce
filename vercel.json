@@ -1,11 +1,23 @@
 {
   "version": 2,
   "builds": [
-    { "src": "backend/wsgi.py", "use": "@vercel/python" },
-    { "src": "frontend/package.json", "use": "@vercel/static-build" }
+    {
+      "src": "backend/wsgi.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build"
+    }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/backend/staticfiles/$1" },
-    { "src": "/(.*)", "dest": "/backend/wsgi.py" }
+    {
+      "src": "/static/(.*)",
+      "dest": "/backend/staticfiles/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/backend/wsgi.py"
+    }
   ]
 }
